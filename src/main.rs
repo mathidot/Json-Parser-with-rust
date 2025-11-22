@@ -25,12 +25,9 @@ fn main() {
 
     let file_name = &args[1];
     if let Ok(contents) = std::fs::read_to_string(&file_name) {
-        let ret = parse_json(&mut contents.chars().peekable());
+        let _ = parse_json(&mut contents.chars().peekable());
     } else {
         println!("fail to open file: {}", file_name);
         exit(0);
     }
-
-
-    println!("Hello, world!");
 }
